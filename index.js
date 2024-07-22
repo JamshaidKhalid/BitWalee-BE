@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 // Database connection
-connectDB();
+// connectDB();
 
 // Middleware
 app.use(useragent.express());
