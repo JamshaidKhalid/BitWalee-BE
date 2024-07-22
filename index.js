@@ -38,7 +38,7 @@ app.use('/summary', require('./routes/summary.route'));
 app.use('/admin', require('./routes/admin.route'));
 app.use('/formerUrl', require('./routes/formerUrl.route'));
 
-app.length('/hello', (req, res) => {
+app.get('/hello', (req, res) => {
     res.send('Hello World from BitWalee at AWS EC2');
 
 })
