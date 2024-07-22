@@ -20,7 +20,7 @@ jobs:
         run: docker build -t bitwalee-be-nodejs .
 
       - name: Tag Docker image
-        run: docker push bitwalee-be-nodejs:latest
+        run: docker push jamshaidkhalid/bitwalee-be-nodejs:latest
 
   deploy:
     needs: build

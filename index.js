@@ -38,7 +38,10 @@ app.use('/summary', require('./routes/summary.route'));
 app.use('/admin', require('./routes/admin.route'));
 app.use('/formerUrl', require('./routes/formerUrl.route'));
 
+app.length('/hello', (req, res) => {
+    res.send('Hello World from BitWalee at AWS EC2');
 
+})
 
 const defaultPort = 5000;
 const PORT = process.argv[2] || process.env.PORT || defaultPort;
