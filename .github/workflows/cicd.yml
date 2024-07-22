@@ -31,5 +31,5 @@ jobs:
         run: docker pull jamshaidkhalid/bitwalee-be:latest
 
       - name: Run Docker container
-        run: docker run -d -p 3000:3000 --name bitwalee-be-app-container -e MONGO_URI=`${{secrets.MONGO_URI}}` -e LOCATION_API_KEY=`${{secrets.LOCATION_API_KEY}}` jamshaidkhalid/bitwalee-be:latest
+        run: docker run -d -p 3000:3000 --name bitwalee-be-container -e MONGO_URI=`${{secrets.MONGO_URI}}` -e LOCATION_API_KEY=`${{secrets.LOCATION_API_KEY}}` jamshaidkhalid/bitwalee-be:latest
       
