@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 // Database connection
-connectDB();
+// connectDB();
 
 // Middleware
 app.use(useragent.express());
@@ -38,7 +38,7 @@ app.use('/summary', require('./routes/summary.route'));
 app.use('/admin', require('./routes/admin.route'));
 app.use('/formerUrl', require('./routes/formerUrl.route'));
 
-app.get('/hello', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hello World from BitWalee at AWS EC2');
 
 })
