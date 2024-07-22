@@ -43,8 +43,8 @@ app.get('/hello', (req, res) => {
 
 })
 
-const defaultPort = 3000;
-const PORT = process.argv[2] || process.env.PORT || defaultPort;
+const defaultPort = 5000;
+const PORT = secrets.PORT || defaultPort;
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`);
