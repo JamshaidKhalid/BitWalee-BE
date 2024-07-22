@@ -43,7 +43,7 @@ app.get('/hello', (req, res) => {
 
 })
 
-const defaultPort = 5000;
+const defaultPort = 3000;
 const PORT = process.argv[2] || process.env.PORT || defaultPort;
 
 app.listen(PORT, () => {
