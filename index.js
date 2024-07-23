@@ -18,6 +18,7 @@ app.set('trust proxy', true);
 
 const corsOptions = {
     origin: [
+        'http://16.171.201.244:8080',
         process.env.CLIENT_PROD_URL,
         process.env.CLIENT_DEV_URL,
     ],
@@ -38,10 +39,7 @@ app.use('/summary', require('./routes/summary.route'));
 app.use('/admin', require('./routes/admin.route'));
 app.use('/formerUrl', require('./routes/formerUrl.route'));
 
-app.get('/', (req, res) => {
-    res.send('Hi World from BitWalee at AWS EC2');
 
-})
 
 app.get('/hello', (req, res) => {
     res.send('Hello World from BitWalee at AWS EC2');
