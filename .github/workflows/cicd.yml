@@ -30,13 +30,8 @@ jobs:
       - name: Pull Docker image
         run: docker pull jamshaidkhalid/bitwalee-be:latest
       - name: Delete existing container
-        run: docker rm -f bitwalee-container-5  
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.11.0
-        with:
-          mongodb-version: ${{ matrix.mongodb-version }}
-          mongodb-username: admin
-          mongodb-password: admin
+        run: docker rm -f bitwalee-container-5
       - name: Run Docker container
-        run: docker run -d -p 5000:5000 --name bitwalee-container-5 -e MONGO_URI=`${{secrets.MONGO_URI}}` jamshaidkhalid/bitwalee-be:latest
+        run: docker run -d -p 5000:5000 --name bitwalee-container-5 jamshaidkhalid/bitwalee-be:latest
+
       

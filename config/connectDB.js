@@ -1,25 +1,22 @@
-//config file that connects server to mongodb
-
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI;
+// const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = `mongodb+srv://admin:admin@cluster0.izoziuz.mongodb.net/?retryWrites=true&w=majority`;
 
 const connectDB = async () => {
     try {
-        mongoose
-            .connect(MONGO_URI, {
-            })
-            .then(() => {
-                console.log(`MongoDB Connected successfully ${MONGO_URI}`);
-            });
+        await mongoose.connect(MONGO_URI, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log(`MongoDB Connected successfully: ${MONGO_URI}`);
     } catch (error) {
-        console.log(`somer error occur ${error}`);
+        console.error(`Error occurred: ${error.message}`);
+        process.exit(1); // Exit process with failure
     }
 };
-
-
 
 module.exports = connectDB;
