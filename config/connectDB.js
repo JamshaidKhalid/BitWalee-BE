@@ -3,8 +3,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-// const MONGO_URI = process.env.MONGO_URI;
-const MONGO_URI = `mongodb+srv://admin:admin@cluster0.izoziuz.mongodb.net/?retryWrites=true&w=majority`;
+const MONGO_URI = process.env.MONGO_URI;
+// const MONGO_URI = `mongodb+srv://admin:admin@cluster0.izoziuz.mongodb.net/?retryWrites=true&w=majority`;
 
 const connectDB = async () => {
     try {
