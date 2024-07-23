@@ -32,6 +32,6 @@ jobs:
       - name: Delete existing container
         run: docker rm -f bitwalee-container-5
       - name: Run Docker container
-        run: docker run -d -p 5000:5000 --name bitwalee-container-5 -e MONGO_URI=${{ secrets.MONGO_URI }} jamshaidkhalid/bitwalee-be:latest
+        run: docker run -d -p 5000:5000 --name bitwalee-container-5 -e MONGO_URI=`${{ secrets.MONGO_URI }}` jamshaidkhalid/bitwalee-be:latest
 
       
