@@ -29,7 +29,8 @@ jobs:
     steps:
       - name: Pull Docker image
         run: docker pull jamshaidkhalid/bitwalee-be:latest
-
+      - name: Delete existing container
+        run: docker rm -f bitwalee-container-5
       - name: Run Docker container
         run: docker run -d -p 5000:5000 --name bitwalee-container-5 -e MONGO_URI=`${{secrets.MONGO_URI}}` -e LOCATION_API_KEY=`${{secrets.LOCATION_API_KEY}}` jamshaidkhalid/bitwalee-be:latest
       
