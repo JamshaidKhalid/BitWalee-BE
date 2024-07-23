@@ -4,14 +4,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const MONGO_URI = process.env.MONGO_URI;
-// const MONGO_URI = `mongodb+srv://admin:admin@cluster0.izoziuz.mongodb.net/?retryWrites=true&w=majority`;
 
 const connectDB = async () => {
     try {
-        await mongoose.connect(MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        await mongoose.connect(MONGO_URI);
         console.log(`MongoDB Connected successfully: ${MONGO_URI}`);
     } catch (error) {
         console.error(`Error occurred: ${error.message}`);
